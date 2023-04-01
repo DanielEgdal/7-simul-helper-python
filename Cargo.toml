@@ -1,0 +1,19 @@
+[package]
+name = "clockapp_python"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# clock_app = {path = "../clock_app" }
+clock_app = {git = "https://github.com/DanielEgdal/7-simul-memo" }
+
+
+[lib]
+name = "clockapp_python"
+crate-type = ["cdylib"]
+
+[dependencies.pyo3]
+version = "0.13.1"
+features = ["extension-module"]

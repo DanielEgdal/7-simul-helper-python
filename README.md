@@ -1,0 +1,1 @@
+As with https://github.com/DanielEgdal/7-simul-memo, it might be good to add options for more orientations

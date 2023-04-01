@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block extrahead %} 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ url_for('static', filename='js/get_memo.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+   <h1>Clock 7 Simul helper</h1>
+   <div class="scramble_container">
+        <p>Current scramble: </p>
+        <p id="scramble" class="scramble"></p>
+    </div>
+    <textarea id="scramble_text" placeholder="Type in your scramble">UR3- DR6+ DL2- UL1+ U5- R3- D3+ L6+ ALL5+ y2 U3- R4- D3+ L3- ALL2- UR UL</textarea>
+   <br>
+    <button onclick="get_memo();">Get memo</button>
+
+   <div class="solution_container">
+        <p class="memo_info hideP">Directly after perfoming the scramble, perfom an x2. 
+            Each line is made such that the left move is perfomed by left hand, and the right move is performed by the right hand. 
+        </p>
+        <p class="memo_info hideP">Set the pins to all up, except for DL</p>
+        <div class="sol_lin">
+            <p class='memo' id="memo1"></p>
+            <p class='memo' id="memo2"></p>
+        </div>
+        <p class="memo_info hideP">Set all the R pins up</p>
+        <div class="sol_lin">
+            <p class='memo' id="memo3"></p>
+            <p class='memo' id="memo4"></p>
+        </div>
+        <p class="memo_info hideP">Set up only the DR pin, solve the center edge to UR UL. Then solve the UL corner to the block.</p>
+        <p class="memo_info hideP">Set up the DR and UL pins</p>
+        <div class="sol_lin">
+            <p class='memo' id="memo5"></p>
+            <p class='memo' id="memo6"></p>
+        </div>
+        <p class="memo_info hideP">Set up only the UL pin, solve the entire left block of the clock</p>
+        <p class="memo_info hideP">Set up only the UL and DL pins, solve everything except the UR clock.</p>
+        <p class="memo_info hideP">Set up everything except the UR pin, solve everything towards 12.</p>
+   </div>
+   <button onclick="toggle_hints();">Toggle hints</button>
+
+{% endblock %}
